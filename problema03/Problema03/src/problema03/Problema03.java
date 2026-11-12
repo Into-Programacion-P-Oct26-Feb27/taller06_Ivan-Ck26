@@ -17,7 +17,7 @@ public class Problema03 {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
 
-        // 1. Solicitar los datos necesarios del empleado
+       
         System.out.print("Ingrese el nombre del empleado: ");
         String empleado = entrada.nextLine();
 
@@ -36,36 +36,36 @@ public class Problema03 {
         System.out.print("Ingrese el sueldo inicial: ");
         double sueldoInicial = entrada.nextDouble();
 
-        // Variables para los cálculos
+        
         double porcentajeIncrementoDecimal = 0.0;
         int porcentajeEnteroReporte = 0;
         double bonificacionAntiguedad = 0.0;
 
-        // 2. Determinar el porcentaje de incremento según el tipo de empleado usando switch
+        
         switch (tipoEmpleado) {
             case 1:
-                porcentajeIncrementoDecimal = 0.05; // 5%
+                porcentajeIncrementoDecimal = 0.05; 
                 porcentajeEnteroReporte = 5;
                 break;
             case 2:
-                porcentajeIncrementoDecimal = 0.07; // 7%
+                porcentajeIncrementoDecimal = 0.07; 
                 porcentajeEnteroReporte = 7;
                 break;
             case 3:
-                porcentajeIncrementoDecimal = 0.09; // 9%
+                porcentajeIncrementoDecimal = 0.09; 
                 porcentajeEnteroReporte = 9;
                 break;
             case 4:
-                porcentajeIncrementoDecimal = 0.12; // 12%
+                porcentajeIncrementoDecimal = 0.12; 
                 porcentajeEnteroReporte = 12;
                 break;
             default:
-                porcentajeIncrementoDecimal = 0.15; // 15% para el tipo 5 o cualquier otro
+                porcentajeIncrementoDecimal = 0.15; 
                 porcentajeEnteroReporte = 15;
                 break;
         }
 
-        // 3. Determinar la bonificación por antigüedad usando estructuras if-else anidadas
+        
         if (anosServicio < 2) {
             bonificacionAntiguedad = 0.00;
         } else {
@@ -75,16 +75,16 @@ public class Problema03 {
                 if (anosServicio >= 5 && anosServicio < 10) {
                     bonificacionAntiguedad = 60.00;
                 } else {
-                    bonificacionAntiguedad = 100.00; // 10 años o más
+                    bonificacionAntiguedad = 100.00; 
                 }
             }
         }
 
-        // 4. Realizar los cálculos finales
+        
         double incrementoSalarial = sueldoInicial * porcentajeIncrementoDecimal;
         double nuevoSueldo = sueldoInicial + incrementoSalarial + bonificacionAntiguedad;
 
-        // 5. Presentar el informe final con los valores a dos decimales
+        
         System.out.println("\n----------------------------------------");
         System.out.println("      REPORTE DE INCREMENTO SALARIAL    ");
         System.out.println("----------------------------------------");
